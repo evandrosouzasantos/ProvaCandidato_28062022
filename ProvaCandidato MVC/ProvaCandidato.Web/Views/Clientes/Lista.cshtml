@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ProvaCandidato.Data.Entidade.Cliente>
+<p>
+    @Html.ActionLink("Adicionar", "Create")
+</p>
+<div class="row">
+    <div class="col-md-11">
+        <input class="form-control" type="text" id="txtPesquisar" name="txtPesquisar" value=""  />
+    </div>
+    <div class="col-md-auto">
+        <div class="col-md-auto">
+            <button class="btn-default" onclick="ExecutarBusca()">Pesquisar</button>
+        </div>
+    </div>
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.Codigo }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Codigo })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+

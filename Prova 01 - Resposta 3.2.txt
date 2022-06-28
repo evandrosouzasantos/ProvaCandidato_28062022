@@ -1,0 +1,49 @@
+Caso de Uso: Locações
+Objetivo: Permitir ao proprietário controlar locações para a festa do cliente
+Ator: Proprietário
+
+Pré-Condições: Ter ao menos 1 tema cadastrado previamente
+
+Fluxo Principal:
+1 - Ator acessa area do cadastro de locações
+2 - Sistema apresenta a tela contendo os seguintes itens:
+	- Nome do Cliente (Campo texto editável)
+	- Tipo do Cliente (Caixa de seleção contendo as opções "Pessoa Fisica" e "Pessoa Juridica")
+	- Telefone do Cliente (Campo numérico editável)
+	- Endereço do Cliente (Campo Alfa-Numérico editável)
+	- Data da Festa	(Campo de Data editável)
+	- Endereço da Festa (Campo Alfa-Numérico editável)
+	- Tema da Festa (Caixa de seleção contendo temas cadastrados previamente)
+	- Horario de Inicio (Campo de Hora editável)
+	- Horário de Termino (Campo de Hora editável)
+	- Numero de Participantes (Campo numérico editável)
+	- Botão Salvar 
+	- Botão Voltar [FA1]
+3 - Ator preenche formulario [FA2]
+4 - Ator clica em "Salvar" [RN1]
+5 - Sistema grava as informações
+6 - Caso de uso encerrado
+
+
+FA1 - Fluxo Alternativo 1 (Botão voltar):	
+1 - Ator clica no botão "Voltar"
+2 - Sistema redireciona para a pagina inicial
+3 - O fluxo alternativo é encerrado
+
+FA2 - Fluxo Alternativo 2 (Calcular desconto):	
+1 - Ator seleciona tema da festa
+2 - Ator seleciona numero de participantes
+3 - Sistema calcula desconto a ser aplicado
+4 - O fluxo alternativo é encerrado
+
+RN1 - Regras de Negócio 1:sim
+1 - Nome do Cliente (Campo obrigatório)
+2 - Tipo do Cliente (Campo obrigatório)
+3 - Telefone do Cliente (Campo obrigatório)
+4 - Endereço do Cliente (Campo obrigatório)
+5 - Data da Festa	(Campo obrigatório, Data não pode ser menor que data atual)
+6 - Endereço da Festa (Campo obrigatório)
+7 - Tema da Festa (Campo obrigatório)
+8 - Horario de Inicio (Campo obrigatório)
+9 - Horário de Termino (Campo obrigatório, horario de termino precisa ser maior que horario de inicio)
+10 - Numero de Participantes (Campo obrigatório) 
